@@ -1,0 +1,55 @@
+/* Replicate the animation for every browser: */
+
+@-webkit-keyframes turnGear {
+ 0% { -webkit-transform: rotate(0deg); }
+    
+ 100% { -webkit-transform: rotate(359deg); }
+}
+@-o-keyframes turnGear {
+ 0% { -o-transform: rotate(0deg); }
+    5% { -o-transform: rotate(90deg); }
+    10% { -o-transform: rotate(180deg); }
+    100% { -o-transform: rotate(359deg); }
+}
+@-moz-keyframes turnGear {
+ 0% { -moz-transform: rotate(0deg); }
+    5% { -moz-transform: rotate(90deg); }
+    10% { -moz-transform: rotate(180deg); }
+    100% { -moz-transform: rotate(359deg); }
+}
+@keyframes turnGear {
+ 0% { transform: rotate(0deg); }
+    5% { transform: rotate(90deg); }
+    10% { transform: rotate(180deg); }
+    100% { transform: rotate(359deg); }
+}
+@-webkit-keyframes turnrGear {
+ 0% { -webkit-transform: rotate(0deg); }
+    
+ 100% { -webkit-transform: rotate(-359deg); }
+}
+
+/* -- Create a class to both call and add additional properties to the animation --*/
+
+.rgear {
+-webkit-animation: turnrGear 4s linear infinite;
+}
+.gear {
+-webkit-animation: turnGear 4s linear infinite;
+/*
+ * below is a longer way of doing the above
+-webkit-animation-name: turnGear;
+-webkit-animation-duration: 3s;
+-webkit-animation-iteration-count: infinite;
+*/
+-o-animation-name: turnGear;
+-o-animation-duration: 3s;
+-o-animation-iteration-count: infinite;
+-moz-animation-name: turnGear;
+-moz-animation-duration: 3s;
+-moz-animation-iteration-count: infinite;
+animation-name: turnGear;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+
